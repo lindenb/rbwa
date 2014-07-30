@@ -12,7 +12,12 @@ Pierre Lindenbaum PhD
 @yokofakun
 
 
-## Compilation
+## Install and Compilation
+
+```bash
+$ git clone https://github.com/lindenb/rbwa.git
+$ cd rbwa
+```
 
 download the submodule for bwa:
 
@@ -27,7 +32,7 @@ $ make
 or you can pass the path to the R include files by specifying **RCFLAGS**:
 
 ```bash
-$ make -B librbwa.so RCFLAGS=" --I/commun/data/packages/R/R-3.1.1/R-3.1.1/include/ "
+$ make -B librbwa.so RCFLAGS=" -I/commun/data/packages/R/R-3.1.1/R-3.1.1/include/ "
 ```
 
 
