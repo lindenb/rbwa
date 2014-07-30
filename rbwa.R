@@ -1,28 +1,5 @@
 
 
-
-load.dynamic.libraries<-function(libnames)
-	{ 
-	for(libname in libnames)
-		{
-		found_file=libname;
-        	for(path in unlist(strsplit(Sys.getenv("LD_LIBRARY_PATH"),":",fixed=TRUE))) 
-        		{
-        	        try_file <- paste0(path,"/",libname);
-        	        
-        	        if( file.exists(try_file) )
-        	                {
-        	                
-        	                found_file = try_file;
-        	                break;
-        	                }
-        		}
-       		write(paste("Loading :", found_file), stderr())
-        	dyn.load(found_file);
-		}
-	
-	}
-
 PRIVATE_BWA_LIBRARIES_LOADED=FALSE;
 
 private_load_bwa_libraries<-function()
